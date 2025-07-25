@@ -2,7 +2,7 @@
 //  ToDoEntity+CoreDataProperties.swift
 //  ToDOList
 //
-//  Created by kirill on 22.07.2025.
+//  Created by Kirill on 25.07.2025.
 //
 //
 
@@ -11,13 +11,15 @@ import CoreData
 
 
 extension ToDoEntity {
+
     @nonobjc public class func fetchRequest() -> NSFetchRequest<ToDoEntity> {
         return NSFetchRequest<ToDoEntity>(entityName: "ToDoEntity")
     }
 
     @NSManaged public var id: UUID?
-    @NSManaged public var isDone: Bool
-    @NSManaged public var title: String?
+    @NSManaged public var completed: Bool
+    @NSManaged public var userId: UUID?
+    @NSManaged public var todo: String?
 
 }
 

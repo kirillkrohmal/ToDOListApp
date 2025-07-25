@@ -7,6 +7,9 @@ struct TodoListResponse: Codable {
 
 struct TodoItem: Codable, Identifiable {
     let id: UUID?
-    let title: String
-    let IsDone: Bool?
+    let userId: id
+    let completed: Bool
+    let toDo: String
+    let createdAt: Date
+    
 }

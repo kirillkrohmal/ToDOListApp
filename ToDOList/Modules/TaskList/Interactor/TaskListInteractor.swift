@@ -35,8 +35,10 @@ final class TaskListInteractor: TaskListInteractorProtocol {
         todos.forEach { item in
             let entity = ToDoEntity(context :context)
             entity.id = UUID()
-            entity.isDone = Bool(item.completed)
-            entity.title = String()
+            entity.userId = UUID()
+            entity.completed = Bool(item.completed)
+            entity.toDo = String()
+            entity.createdAt = Date()
         }
 
         CoreDataStack.shared.saveContext()

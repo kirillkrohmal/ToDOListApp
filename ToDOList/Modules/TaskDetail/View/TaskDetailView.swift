@@ -34,11 +34,11 @@ struct TaskDetailView: View {
     private func saveTask() {
         let context = CoreDataStack.shared.context
         let entity = task ?? ToDoEntity(context: context)
-        entity.title = title
+        entity.todo = toDo
         entity.completed = isCompleted
         entity.createdAt = entity.createdAt ?? Date()
         entity.id = entity.id == 0 ? Int64(Date().timeIntervalSince1970) : entity.id
-
+        entity.userId = entity.userId
         CoreDataStack.shared.saveContext()
     }
 }
