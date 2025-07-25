@@ -5,7 +5,7 @@ final class NetworkService {
     private init() {}
 
     func fetchTodos(completion: @escaping (Result<[TodoItem], Error>) -> Void) {
-        guard let url = URL(string: "https://dummyjson.com/todos") else {
+        guard let url = URL(string: "https://json.com/todos") else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0)))
             return
         }
